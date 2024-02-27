@@ -1,0 +1,14 @@
+[Unit]
+Description=Insights ROS Collector Timer Task
+Documentation=man:insights-client(8)
+After=network-online.target
+Wants=network-online.target
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=14400
+
+[Install]
+WantedBy=timers.target
+Also=insights-client-results.path

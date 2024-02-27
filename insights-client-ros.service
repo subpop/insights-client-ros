@@ -1,0 +1,13 @@
+[Unit]
+Description=Insights ROS Collector
+Documentation=man:insights-client(8)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/insights-client --manifest /etc/insights-client/apps/manifest-ros.yml
+Restart=no
+WatchdogSec=900
+CPUQuota=30%
+MemoryLimit=2G
+TasksMax=300
+BlockIOWeight=100
